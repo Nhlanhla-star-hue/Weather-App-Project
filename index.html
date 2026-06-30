@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+</head>
+<body>
+    <div clas="container">
+        <h1> Welcome to my Weather App!</h1>
+        <form>
+            <input type="text" placeholder="Enter city name">
+            <input type="submit" value=" Search">
+        </form>
+        <div class="weather-info">
+            <div class="weather-details" >
+            <h2>Name of the City</h2>
+            <p>Weather:<span id="weather"></span></p>
+            <p>Humidity: <span id="humidity"></span></p>
+            <p>Wind Speed: <span id="wind-speed"></span></p>
+            </div>  
+
+            <div class="weather-icon">
+                <img id="weather-icon" src="" alt="Weather Icon">
+                <p>Temperature: <span id="temperature"></span>°C</p>
+            </div>  
+        </div>
+
+        <div class="forecast">
+            <h2>5-Day Forecast</h2>
+            <div class="forecast-cards" id="forecast-cards">
+                <!-- Forecast cards will be dynamically generated here -->
+            </div>
+        </div>
+
+        <footer>
+            Weather App Project &copy; 2024 by <a href="https://github.com/Nhlanhla-star-hue">Nhlanhla Karen Ndlovu</a>. All rights reserved.  
+        </footer>
+    </div>
+    
+</body>
+</html>
