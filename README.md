@@ -8,6 +8,14 @@ A responsive weather application built using **HTML, CSS, and JavaScript** as pa
 
 The Weather App allows users to search for a city and view its current weather conditions, including temperature, humidity, wind speed, and a weather icon. It also includes a five-day forecast section to provide users with upcoming weather information.
 
+## 🚀 Live Project
+
+🌐 **Live Demo:** https://nhlanhla-star-hue.github.io/Weather-App-Project/
+
+💻 **Source Code:** https://github.com/Nhlanhla-star-hue/Weather-App-Project
+
+---
+
 ---
 
 ## ✨ Features
