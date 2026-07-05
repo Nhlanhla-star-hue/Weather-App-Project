@@ -61,6 +61,6 @@ Project screenshots can be found in the **screenshots** folder.
 
 **Nhlanhla K. Ndlovu**
 
-Computer Science Graduate | Software Developer
+Computer Science Graduate from Wits | Software Developer
 
 GitHub: https://github.com/Nhlanhla-star-hue
