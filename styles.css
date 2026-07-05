@@ -82,7 +82,7 @@ h1 {
 }
 
 .search-button:hover {
-    transform: translateY(-2px);
+    transform: translateY(-2px); /* slight lift effect on hover */
     background: #f2f2f2;
 }
 
