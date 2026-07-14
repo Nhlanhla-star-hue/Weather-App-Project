@@ -86,9 +86,16 @@ h1 {
     background: #f2f2f2;
 }
 
+#date-time {
+    margin-bottom: 20px;
+    font-size: 18px;
+    opacity: 0.9;
+}
+
 .weather-info {
     text-align: center;
 }
+
 
 .weather-details h2 {
     font-size: 38px;
