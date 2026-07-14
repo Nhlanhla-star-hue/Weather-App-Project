@@ -39,15 +39,28 @@ function getDate(event){
     dateTime.innerHTML=`${day}, ${date} ${month} ${year}, ${hour}:${minutes}`
 }
 
+function getTemp(response){
+    let temp=document.querySelector(".temperature");
+    let temperature=Math.round(response.data.temperature.current);
+    temp.innerHTML=temperature;
+}
+
 
 function getCity(event){
     event.preventDefault();
     let input= document.querySelector(".search-input");
     let city= document.querySelector("#city");
     city.innerHTML=input.value;
+    
+    //declaring our API URL
+    let apiKey = "b2a5adcct04b33178913oc335f405433";
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${input.value}&key=${apiKey}&units=metric`;
+                                                                    //had to change it to the city that was passed in the search engine
+    axios.get(apiUrl).then(getTemp); // calling getTemp here
 
     //calling getDate
     getDate();
+
 
 }
 
