@@ -1,8 +1,14 @@
 function getWeather(response){
     let temp=document.querySelector(".temperature");
-    let temperature=Math.round(response.data.temperature.current);
-    temp.innerHTML=temperature;
     let city= document.querySelector("#city");
+    let descriptionElement=document.querySelector("#description")
+    let dateTimeElement= document.querySelector("#date-time")
+    let iconElement=document.querySelector("#weather-icon")
+    let humidityElement=documnt.querySelector("#humidity")
+    let windElement=document.querySelector("#wind-speed")
+    let temperatureElement=Math.round(response.data.temperature.current);
+    temp.innerHTML=temperatureElement;
+    
     city.innerHTML= response.data.city // I did this so that the city that is displayed is from the API rather then the one typed in on ths search input
     //Taking into consideration e.g instead of displaying jOhannEsburg which is from the search input, the app wll display Johannesburg(Title form)
 }
