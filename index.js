@@ -12,6 +12,7 @@ function getWeather(response){
     city.innerHTML=response.data.city;// I did this so that the city that is displayed is from the API rather then the one typed in on ths search input
     //Taking into consideration e.g instead of displaying jOhannEsburg which is from the search input, the app wll display Johannesburg(Title form)
     descriptionElement.innerHTML= response.data.condition.description;
+    humidityElement.innerHTML=response.data.temperature.humidity;
 }
 
 
