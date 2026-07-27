@@ -43,14 +43,19 @@ function getTemp(response){
     let temp=document.querySelector(".temperature");
     let temperature=Math.round(response.data.temperature.current);
     temp.innerHTML=temperature;
+    let city= document.querySelector("#city");
+    city.innerHTML= response.data.city // I did this so that the city that is displayed is from the API rather then the one typed in on ths search input
+    //Taking into consideration e.g instead of displaying jOhannEsburg which is from the search input, the app wll display Johannesburg(Title form)
 }
 
 
 function getCity(event){
     event.preventDefault();
     let input= document.querySelector(".search-input");
-    let city= document.querySelector("#city");
-    city.innerHTML=input.value;
+
+    //Go see the function above, see why I moved this
+   // let city= document.querySelector("#city");
+    //city.innerHTML=input.value;
     
     //declaring our API URL
     let apiKey = "b2a5adcct04b33178913oc335f405433";
