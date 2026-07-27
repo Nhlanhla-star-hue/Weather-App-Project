@@ -9,7 +9,7 @@ function getWeather(response){
     
     let temperatureElement=Math.round(response.data.temperature.current);
     temp.innerHTML=temperatureElement;
-    city.innerHTML= response.data.city;// I did this so that the city that is displayed is from the API rather then the one typed in on ths search input
+    city.innerHTML=response.data.city;// I did this so that the city that is displayed is from the API rather then the one typed in on ths search input
     //Taking into consideration e.g instead of displaying jOhannEsburg which is from the search input, the app wll display Johannesburg(Title form)
     descriptionElement.innerHTML= response.data.condition.desciption;
 }
