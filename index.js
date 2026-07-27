@@ -1,3 +1,13 @@
+function getWeather(response){
+    let temp=document.querySelector(".temperature");
+    let temperature=Math.round(response.data.temperature.current);
+    temp.innerHTML=temperature;
+    let city= document.querySelector("#city");
+    city.innerHTML= response.data.city // I did this so that the city that is displayed is from the API rather then the one typed in on ths search input
+    //Taking into consideration e.g instead of displaying jOhannEsburg which is from the search input, the app wll display Johannesburg(Title form)
+}
+
+
 function getDate(event){
     //event.preventDefault();  I didn't know that this is for when I want to submit something using a form
     let now= new Date();
@@ -39,29 +49,18 @@ function getDate(event){
     dateTime.innerHTML=`${day}, ${date} ${month} ${year}, ${hour}:${minutes}`
 }
 
-function getTemp(response){
-    let temp=document.querySelector(".temperature");
-    let temperature=Math.round(response.data.temperature.current);
-    temp.innerHTML=temperature;
-    let city= document.querySelector("#city");
-    city.innerHTML= response.data.city // I did this so that the city that is displayed is from the API rather then the one typed in on ths search input
-    //Taking into consideration e.g instead of displaying jOhannEsburg which is from the search input, the app wll display Johannesburg(Title form)
-}
 
 
 function getCity(event){
     event.preventDefault();
     let input= document.querySelector(".search-input");
-
     //Go see the function above, see why I moved this
    // let city= document.querySelector("#city");
     //city.innerHTML=input.value;
-    
-    //declaring our API URL
-    let apiKey = "b2a5adcct04b33178913oc335f405433";
+    let apiKey = "b2a5adcct04b33178913oc335f405433";    //declaring our API URL
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${input.value}&key=${apiKey}&units=metric`;
                                                                     //had to change it to the city that was passed in the search engine
-    axios.get(apiUrl).then(getTemp); // calling getTemp here
+    axios.get(apiUrl).then(getWeather); // calling getWeather here
 
     //calling getDate
     getDate();
