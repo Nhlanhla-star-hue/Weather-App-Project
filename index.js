@@ -72,4 +72,5 @@ function getCity(event){
 
 
 let form=document.querySelector("form");
-form.addEventListener("submit",getCity); // You can only call one function only on an Event listener
+form.addEventListener("submit",getCity); // You can only call one function only on an Event listenerget
+getCity(Johannesburg) //Default City when the app is reloaded
