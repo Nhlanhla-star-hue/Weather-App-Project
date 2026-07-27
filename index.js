@@ -1,16 +1,17 @@
 function getWeather(response){
     let temp=document.querySelector(".temperature");
     let city= document.querySelector("#city");
-    let descriptionElement=document.querySelector("#description")
-    let dateTimeElement= document.querySelector("#date-time")
-    let iconElement=document.querySelector("#weather-icon")
-    let humidityElement=documnt.querySelector("#humidity")
-    let windElement=document.querySelector("#wind-speed")
+    let descriptionElement=document.querySelector("#description");
+    let dateTimeElement= document.querySelector("#date-time");
+    let iconElement=document.querySelector("#weather-icon");
+    let humidityElement=documnt.querySelector("#humidity");
+    let windElement=document.querySelector("#wind-speed");
+    
     let temperatureElement=Math.round(response.data.temperature.current);
     temp.innerHTML=temperatureElement;
-    
-    city.innerHTML= response.data.city // I did this so that the city that is displayed is from the API rather then the one typed in on ths search input
+    city.innerHTML= response.data.city;// I did this so that the city that is displayed is from the API rather then the one typed in on ths search input
     //Taking into consideration e.g instead of displaying jOhannEsburg which is from the search input, the app wll display Johannesburg(Title form)
+    descriptionElement.innerHTML= response.data.condition.desciption;
 }
 
 
@@ -79,4 +80,4 @@ function getCity(event){
 let form=document.querySelector("form");
 form.addEventListener("submit",getCity); // You can only call one function only on an Event listenerget
 
-getCity("Pretoria") //Default City when the app is reloaded
+getCity("Pretoria");//Default City when the app is reloaded
