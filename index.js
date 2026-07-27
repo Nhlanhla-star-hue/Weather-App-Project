@@ -4,14 +4,14 @@ function getWeather(response){
     let descriptionElement=document.querySelector("#description");
     let dateTimeElement= document.querySelector("#date-time");
     let iconElement=document.querySelector("#weather-icon");
-    let humidityElement=documnt.querySelector("#humidity");
+    let humidityElement=document.querySelector("#humidity");
     let windElement=document.querySelector("#wind-speed");
     
     let temperatureElement=Math.round(response.data.temperature.current);
     temp.innerHTML=temperatureElement;
     city.innerHTML=response.data.city;// I did this so that the city that is displayed is from the API rather then the one typed in on ths search input
     //Taking into consideration e.g instead of displaying jOhannEsburg which is from the search input, the app wll display Johannesburg(Title form)
-    descriptionElement.innerHTML= response.data.condition.desciption;
+    descriptionElement.innerHTML= response.data.condition.description;
 }
 
 
@@ -56,18 +56,18 @@ function getDate(event){
     dateTime.innerHTML=`${day}, ${date} ${month} ${year}, ${hour}:${minutes}`
 }
 
+function searchCity(city){
+    let apiKey = "b2a5adcct04b33178913oc335f405433";
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+
+    axios.get(apiUrl).then(getWeather);
+}
 
 
 function getCity(event){
     event.preventDefault();
     let input= document.querySelector(".search-input");
-    //Go see the function above, see why I moved this
-   // let city= document.querySelector("#city");
-    //city.innerHTML=input.value;
-    let apiKey = "b2a5adcct04b33178913oc335f405433";    //declaring our API URL
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${input.value}&key=${apiKey}&units=metric`;
-                                                                    //had to change it to the city that was passed in the search engine
-    axios.get(apiUrl).then(getWeather); // calling getWeather here
+    searchCity(input.value)
 
     //calling getDate
     getDate();
@@ -79,5 +79,4 @@ function getCity(event){
 
 let form=document.querySelector("form");
 form.addEventListener("submit",getCity); // You can only call one function only on an Event listenerget
-
-getCity("Pretoria");//Default City when the app is reloaded
+searchCity("Pretoria");//Default City when the app is reloaded
