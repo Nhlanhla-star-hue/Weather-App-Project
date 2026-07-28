@@ -8,6 +8,7 @@ function getWeather(response){
     let timeDateElement=document.querySelector("#date-time");
     let date=new Date(response.data.time * 1000) //Formating the date properly intstead of just getting a number
     
+    
     let temperatureElement=Math.round(response.data.temperature.current);
     temp.innerHTML=temperatureElement;
     city.innerHTML=response.data.city;// I did this so that the city that is displayed is from the API rather then the one typed in on ths search input
@@ -16,6 +17,7 @@ function getWeather(response){
     humidityElement.innerHTML=response.data.temperature.humidity;
     windElement.innerHTML=response.data.wind.speed;
     timeDateElement.innerHTML=formatDate(date); // returns a formatted date as in proper day and months and the 0 take into consideration for single value mins
+    iconElement.innerHTML=`<img src="${response.data.condition.icon_url}" alt="${response.data.condition.description}">`;
 }
 
 
