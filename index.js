@@ -58,7 +58,7 @@ function formatDate(date){ ///takes the date
     month=months[month];
 
     
-    return `${day}, ${date} ${month} ${year}, ${hour}:${minutes}`
+    return `${day}, ${date} ${month} ${year}, ${hour}:${minutes}`;
 }
 
 function searchCity(city){
