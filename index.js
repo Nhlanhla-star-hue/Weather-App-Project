@@ -2,7 +2,6 @@ function getWeather(response){
     let temp=document.querySelector(".temperature");
     let city= document.querySelector("#city");
     let descriptionElement=document.querySelector("#description");
-    let dateTimeElement= document.querySelector("#date-time");
     let iconElement=document.querySelector("#weather-icon");
     let humidityElement=document.querySelector("#humidity");
     let windElement=document.querySelector("#wind-speed");
@@ -15,7 +14,7 @@ function getWeather(response){
     //Taking into consideration e.g instead of displaying jOhannEsburg which is from the search input, the app wll display Johannesburg(Title form)
     descriptionElement.innerHTML= response.data.condition.description;
     humidityElement.innerHTML=response.data.temperature.humidity;
-    windElement.innerHTML=response.data.wind.speed;
+    windElement.innerHTML=Math.round(response.data.wind.speed);
     timeDateElement.innerHTML=formatDate(date); // returns a formatted date as in proper day and months and the 0 take into consideration for single value mins
 }
 
@@ -25,7 +24,7 @@ function formatDate(date){ ///takes the date
    
     let year=date.getFullYear();
     let day=date.getDay();
-    let date= date.getDate();
+    let dayOfWeek= date.getDate();
     let hour= date.getHours();
     let minutes=date.getMinutes();
     let month=date.getMonth();
@@ -58,7 +57,7 @@ function formatDate(date){ ///takes the date
     month=months[month];
 
     
-    return `${day}, ${date} ${month} ${year}, ${hour}:${minutes}`;
+    return `${day}, ${dayOfWeek} ${month} ${year}, ${hour}:${minutes}`;
 }
 
 function searchCity(city){
@@ -74,8 +73,7 @@ function getCity(event){
     let input= document.querySelector(".search-input");
     searchCity(input.value)
 
-    //calling getDate
-    getDate();
+    
 
 
 }
