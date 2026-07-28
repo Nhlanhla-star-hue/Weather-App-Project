@@ -6,6 +6,8 @@ function getWeather(response){
     let iconElement=document.querySelector("#weather-icon");
     let humidityElement=document.querySelector("#humidity");
     let windElement=document.querySelector("#wind-speed");
+    let timeDateElement=document.querySelector("#date-time");
+    
     
     let temperatureElement=Math.round(response.data.temperature.current);
     temp.innerHTML=temperatureElement;
