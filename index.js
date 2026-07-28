@@ -14,7 +14,7 @@ function getWeather(response){
     //Taking into consideration e.g instead of displaying jOhannEsburg which is from the search input, the app wll display Johannesburg(Title form)
     descriptionElement.innerHTML= response.data.condition.description;
     humidityElement.innerHTML=response.data.temperature.humidity;
-    windElement.innerHTML=Math.round(response.data.wind.speed);
+    windElement.innerHTML=response.data.wind.speed;
     timeDateElement.innerHTML=formatDate(date); // returns a formatted date as in proper day and months and the 0 take into consideration for single value mins
 }
 
