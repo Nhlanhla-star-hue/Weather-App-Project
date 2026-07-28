@@ -13,6 +13,7 @@ function getWeather(response){
     //Taking into consideration e.g instead of displaying jOhannEsburg which is from the search input, the app wll display Johannesburg(Title form)
     descriptionElement.innerHTML= response.data.condition.description;
     humidityElement.innerHTML=response.data.temperature.humidity;
+    windElement.innerHTML=response.data.wind.speed;
 }
 
 
