@@ -7,7 +7,7 @@ function getWeather(response){
     let humidityElement=document.querySelector("#humidity");
     let windElement=document.querySelector("#wind-speed");
     let timeDateElement=document.querySelector("#date-time");
-    let date=new Date(respense.data.time * 1000) //Formating the date properly intstead of just getting a number
+    let date=new Date(response.data.time * 1000) //Formating the date properly intstead of just getting a number
     
     let temperatureElement=Math.round(response.data.temperature.current);
     temp.innerHTML=temperatureElement;
