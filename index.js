@@ -18,6 +18,7 @@ function getWeather(response){
     windElement.innerHTML=response.data.wind.speed;
     timeDateElement.innerHTML=formatDate(date); // returns a formatted date as in proper day and months and the 0 take into consideration for single value mins
     iconElement.innerHTML=`<img src="${response.data.condition.icon_url}" alt="${response.data.condition.description}">`;
+    console.log(response.data.condition.icon_url);
 }
 
 
