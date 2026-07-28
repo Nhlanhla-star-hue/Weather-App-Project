@@ -7,7 +7,7 @@ function getWeather(response){
     let humidityElement=document.querySelector("#humidity");
     let windElement=document.querySelector("#wind-speed");
     let timeDateElement=document.querySelector("#date-time");
-    
+    let date=new Date(respense.data.time * 1000) //Formating the date properly intstead of just getting a number
     
     let temperatureElement=Math.round(response.data.temperature.current);
     temp.innerHTML=temperatureElement;
@@ -16,18 +16,19 @@ function getWeather(response){
     descriptionElement.innerHTML= response.data.condition.description;
     humidityElement.innerHTML=response.data.temperature.humidity;
     windElement.innerHTML=response.data.wind.speed;
+    timeDateElement.innerHTML=formatDate(date); // returns a formatted date as in proper day and months and the 0 take into consideration for single value mins
 }
 
 
-function getDate(event){
+function formatDate(date){ ///takes the date
     //event.preventDefault();  I didn't know that this is for when I want to submit something using a form
-    let now= new Date();
-    let year=now.getFullYear();
-    let day=now.getDay();
-    let date= now.getDate();
-    let hour= now.getHours();
-    let minutes=now.getMinutes();
-    let month=now.getMonth();
+   
+    let year=date.getFullYear();
+    let day=date.getDay();
+    let date= date.getDate();
+    let hour= date.getHours();
+    let minutes=date.getMinutes();
+    let month=date.getMonth();
 
     let days=["Sunday",
         "Monday",
@@ -56,8 +57,8 @@ function getDate(event){
     day=days[day];
     month=months[month];
 
-    let dateTime= document.querySelector("#date-time");
-    dateTime.innerHTML=`${day}, ${date} ${month} ${year}, ${hour}:${minutes}`
+    
+    return `${day}, ${date} ${month} ${year}, ${hour}:${minutes}`
 }
 
 function searchCity(city){
