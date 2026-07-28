@@ -73,9 +73,6 @@ function getCity(event){
     let input= document.querySelector(".search-input");
     searchCity(input.value)
 
-    
-
-
 }
 
 
