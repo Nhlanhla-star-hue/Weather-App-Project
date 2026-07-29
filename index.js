@@ -19,7 +19,7 @@ function getWeather(response){
     timeDateElement.innerHTML=formatDate(date); // returns a formatted date as in proper day and months and the 0 take into consideration for single value mins
     //iconElement.innerHTML=`<img src="${response.data.condition.icon_url}" alt="${response.data.condition.description}">`;
     //Had to change to
-    iconElement.src = response.data.condition.icon_url;
+    iconElement.src = response.data.condition.icon_url;//only replacing the src link and not the image entirely cause <img> is a void element, it's not like div and span with open and closed tags
     iconElement.alt = response.data.condition.description;
     console.log(response.data.condition.icon_url);
 }
