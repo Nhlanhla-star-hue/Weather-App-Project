@@ -81,23 +81,30 @@ function getCity(event){
 
 }
 
+function displayForecast(){
+    //Injecting the weather forecast n html via javascript
+    let forecastElement=document.querySelector("#forecast");
+    let days=["Sun","Mon","Tues","Wed","Thurs","Fri","Sat"];
+    let forecastHTML="";
+    days.ForEach(function(day){ //Looping through the array for each day
+    forecastHTML=
+    forecastHMTL + `<div class="weather-forecast-day">
+                        <div class="weather-forecast-date"> ${day}</div> 
+                        <div class="weather-forecast-icon"> ☀️</div>
+                        <div class="weather_forecast-temp"> <strong>15°</strong> 19° </div>
+                    </div>
+                    `; ///CONCATENATE 
+    });
+    forecastElement.innerHTML=forecastHTML; 
+    
+}
 
 
 let form=document.querySelector("form");
 form.addEventListener("submit",getCity); // You can only call one function only on an Event listenerget
 searchCity("Pretoria");//Default City when the app is reloaded
+displayForecast();
 
-let forecast=document.querySelector("#forecast");
-//Injecting the weather forecast n html via javascript
-forecast.innerHTML=`<div class="weather-forecast-day">
-                    <div class="weather-forecast-date"> Tues</div>
-                    <div class="weather-forecast-icon"> ☀️</div>
-                    <div class="weather_forecast-temp"> <strong>15°</strong> 19° </div>
-                </div>
-                <div class="weather-forecast-day">
-                    <div class="weather-forecast-date"> Wed</div>
-                    <div class="weather-forecast-icon"> ☀️</div>
-                    <div class="weather_forecast-temp"> <strong>15°</strong> 19° </div>
-                </div>
-                `;
+
+
 
