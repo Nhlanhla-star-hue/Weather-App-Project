@@ -86,9 +86,9 @@ function displayForecast(){
     let forecastElement=document.querySelector("#forecast");
     let days=["Sun","Mon","Tues","Wed","Thurs","Fri","Sat"];
     let forecastHTML="";
-    days.ForEach(function(day){ //Looping through the array for each day
+    days.forEach(function(day){ //Looping through the array for each day
     forecastHTML=
-    forecastHMTL + `<div class="weather-forecast-day">
+    forecastHTML + `<div class="weather-forecast-day">
                         <div class="weather-forecast-date"> ${day}</div> 
                         <div class="weather-forecast-icon"> ☀️</div>
                         <div class="weather_forecast-temp"> <strong>15°</strong> 19° </div>
