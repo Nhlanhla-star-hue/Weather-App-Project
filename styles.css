@@ -198,7 +198,7 @@ h1 {
 
     text-align: center;
 
-    transition: .3s ease;
+    transition: .3s ease; /*we want to have smooth transition*/
 }
 
 .weather-forecast-day:hover {
