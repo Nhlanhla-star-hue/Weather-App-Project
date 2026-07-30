@@ -84,7 +84,7 @@ function getCity(event){
 function displayForecast(){
     //Injecting the weather forecast n html via javascript
     let forecastElement=document.querySelector("#forecast");
-    let days=["Sun","Mon","Tues","Wed","Thurs","Sat"];//Removed Friday
+    let days=["Sun","Mon","Tues","Wed","Thurs","Fri"];//Removed Friday
     let forecastHTML="";
     days.forEach(function(day){ //Looping through the array for each day
     forecastHTML=
