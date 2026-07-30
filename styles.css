@@ -144,8 +144,8 @@ h1 {
     font-size: 17px;
 }
 
-.weather-forcast{
-    display:flex;
+.weather-forcast {
+    display: flex;
     justify-content: space-around;
     margin-top: 30px;
 }
