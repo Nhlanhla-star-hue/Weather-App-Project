@@ -146,7 +146,7 @@ h1 {
 
 .weather-forcast{
     display:flex;
-    justify-content: center;
+    justify-content: space-around;
     margin-top: 30px;
 }
     
