@@ -151,7 +151,8 @@ h1 {
 }
 
 .weather-forecast-icon {
-     font-size: 38px;
+    font-size: 38px;
+    margin-bottom: 30px;
 }
 
 .weather-forecast-date {
