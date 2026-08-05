@@ -95,12 +95,12 @@ function displayForecast(response){
     let forecastElement=document.querySelector("#forecast");
     let days=["Sun","Mon","Tues","Wed","Thurs","Fri"];//Removed Friday
     let forecastHTML="";
-    days.forEach(function(day){ //Looping through the array for each day
+    response.data.daily.forEach(function(day){ //Looping through the object daily
     forecastHTML=
     forecastHTML + `<div class="weather-forecast-day">
-                        <div class="weather-forecast-date"> ${day}</div> 
+                        <div class="weather-forecast-date">Tues</div> 
                         <div class="weather-forecast-icon"> ☀️</div>
-                        <div class="weather_forecast-temp"> <strong>15°</strong> 19° </div>
+                        <div class="weather_forecast-temp"> <strong>${Math.round(day.temperature.maximum)}</strong> 19° </div>
                     </div>
                     `; ///CONCATENATE 
     });
