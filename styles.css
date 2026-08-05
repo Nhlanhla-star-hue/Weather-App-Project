@@ -180,12 +180,14 @@ h1 {
 .weather-forecast-icon {
     width: 40px;
     margin-bottom: 30px;
+    display: block;
 }
 
 .weather-forecast-date {
     font-size: 16px;
     line-height: 20px;
     margin-bottom: 10px;
+    margin: 0 auto;
 }
 
 .weather-forecast-day {
