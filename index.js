@@ -100,7 +100,7 @@ function displayForecast(response){
     forecastHTML + `<div class="weather-forecast-day">
                         <div class="weather-forecast-date">Tues</div> 
                         <div class="weather-forecast-icon"> ☀️</div>
-                        <div class="weather_forecast-temp"> <strong>${Math.round(day.temperature.maximum)}</strong> 19° </div>
+                        <div class="weather_forecast-temp"> <strong>${Math.round(day.temperature.maximum)}</strong> ${Math.round(day.temperature.minimum)}° </div>
                     </div>
                     `; ///CONCATENATE 
     });
