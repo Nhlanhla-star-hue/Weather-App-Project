@@ -22,6 +22,7 @@ function getWeather(response){
     iconElement.src = response.data.condition.icon_url;//only replacing the src link and not the image entirely cause <img> is a void element, it's not like div and span with open and closed tags
     iconElement.alt = response.data.condition.description;
     console.log(response.data.condition.icon_url);
+    getForecast(response.data.city);//calling get forecast function
 }
 
 
@@ -81,7 +82,15 @@ function getCity(event){
 
 }
 
-function displayForecast(){
+function getForecast(city){
+    let apiKey= "05141a0be84265fdf894b780797t379o";
+    let apiURL=`https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+    axios(apiURL).then(displayForecast);
+    
+}
+
+
+function displayForecast(response){
     //Injecting the weather forecast n html via javascript
     let forecastElement=document.querySelector("#forecast");
     let days=["Sun","Mon","Tues","Wed","Thurs","Fri"];//Removed Friday
