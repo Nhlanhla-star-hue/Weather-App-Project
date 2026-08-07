@@ -89,6 +89,21 @@ function getForecast(city){
     
 }
 
+function formatDay(date) {
+
+    let days = [
+        "Sun",
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat"
+    ];
+
+    return days[date.getDay()];
+}
+
 
 function displayForecast(response){
     //Injecting the weather forecast n html via javascript
@@ -96,10 +111,11 @@ function displayForecast(response){
     let days=["Sun","Mon","Tues","Wed","Thurs","Fri"];//Removed Friday
     let forecastHTML="";
     response.data.daily.forEach(function(day,index){ //Looping through the object daily, with index we e looping the array of the days of the week
-    if (index < 6){
+    if (index > 0 && index < 7) {
+        let date = new Date(day.time * 1000);
         forecastHTML=
         forecastHTML + `<div class="weather-forecast-day">
-                            <div class="weather-forecast-date">Tues</div> 
+                            <div class="weather-forecast-date">${formatDay(date)}</div> 
                             
                             <img src="${day.condition.icon_url}" class="weather-forecast-icon" />
                             
@@ -116,7 +132,7 @@ function displayForecast(response){
 let form=document.querySelector("form");
 form.addEventListener("submit",getCity); // You can only call one function only on an Event listenerget
 searchCity("Pretoria");//Default City when the app is reloaded
-displayForecast();
+
 
 
 
