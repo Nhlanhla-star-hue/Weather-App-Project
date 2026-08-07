@@ -97,16 +97,16 @@ function displayForecast(response){
     let forecastHTML="";
     response.data.daily.forEach(function(day,index){ //Looping through the object daily, with index we e looping the array of the days of the week
     if (index < 7){
-    forecastHTML=
-    forecastHTML + `<div class="weather-forecast-day">
-                        <div class="weather-forecast-date">Tues</div> 
-                        
-                        <img src="${day.condition.icon_url}" class="weather-forecast-icon" />
-                        
-                        <div class="weather_forecast-temp"> <strong>${Math.round(day.temperature.maximum)}</strong>° ${Math.round(day.temperature.minimum)}° </div>
-                    </div>
-                    `; ///CONCATENATE 
-    }
+        forecastHTML=
+        forecastHTML + `<div class="weather-forecast-day">
+                            <div class="weather-forecast-date">Tues</div> 
+                            
+                            <img src="${day.condition.icon_url}" class="weather-forecast-icon" />
+                            
+                            <div class="weather_forecast-temp"> <strong>${Math.round(day.temperature.maximum)}</strong>° ${Math.round(day.temperature.minimum)}° </div>
+                        </div>
+                        `; ///CONCATENATE 
+        }
     });
     forecastElement.innerHTML=forecastHTML; 
     
